@@ -6,7 +6,7 @@
 
 ## How can I edit this code?
 
-diito There are several ways of editing your application.
+There are several ways of editing your application.
 
 **Use Lovable**
 

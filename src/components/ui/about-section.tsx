@@ -110,7 +110,7 @@ const AboutSection = () => {
     .detail-dot { fill: #cbd5e1; opacity: 0; animation: pulse-glow 3s ease-in-out infinite; }
     .corner-element-animate { position: absolute; width: 40px; height: 40px; border: 1px solid rgba(203, 213, 225, 0.2); opacity: 0; animation: word-appear 1s ease-out forwards; }
     .text-decoration-animate { position: relative; }
-    .text-decoration-animate::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: linear-gradient(90deg, transparent, #cbd5e1, transparent); animation: underline-grow 2s ease-out forwards; animation-delay: 2s; }
+    .text-decoration-animate::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #cbd5e1; animation: underline-grow 2s ease-out forwards; animation-delay: 2s; }
     @keyframes underline-grow { to { width: 100%; } }
     .floating-element-animate { position: absolute; width: 2px; height: 2px; background: #cbd5e1; border-radius: 50%; opacity: 0; animation: float 4s ease-in-out infinite; animation-play-state: paused; }
     @keyframes float { 0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; } 25% { transform: translateY(-10px) translateX(5px); opacity: 0.6; } 50% { transform: translateY(-5px) translateX(-3px); opacity: 0.4; } 75% { transform: translateY(-15px) translateX(7px); opacity: 0.8; } }
@@ -169,21 +169,21 @@ const AboutSection = () => {
           {/* Divider */}
           <div className="about-divider" />
           {/* Professional Side */}
-          <div className="about-section-col flex flex-col justify-center items-end px-2 md:px-8 h-full">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 mb-16 tracking-wide about-word-animate" data-delay="0">Cybersecurity Analyst</h2>
+          <div className="about-section-col flex flex-col justify-start items-center px-2 md:px-8 h-full">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extralight leading-tight tracking-tight text-slate-50 text-decoration-animate mb-16 text-center about-word-animate whitespace-nowrap" data-delay="0">Cybersecurity Analyst</h1>
             <div className="max-w-md w-full">
               <div className="w-16 h-0.5 bg-slate-600 mb-8 opacity-60 mx-0" />
               <ul className="list-disc pl-6 mb-8 text-lg text-slate-300 space-y-3 about-word-animate max-w-lg text-left" data-delay="200">
-                <li>Passionate about offensive security and ethical hacking</li>
-                <li>Holds <span className="font-semibold">CRTP</span> and <span className="font-semibold">CEH v11</span> certifications</li>
-                <li>Currently learning at <span className="font-semibold">PortSwigger Web Security Academy</span></li>
+                <li>Hands-on experience simulating real-world attacks to uncover vulnerabilities before adversaries do.</li>
+                <li>Skilled in Android and iOS application pentesting, focusing on dynamic and static analysis, API security, and reverse engineering.</li>
+                <li>Currently leading a 7-member security team, mentoring analysts, reviewing reports, ensuring project quality, and client satisfaction.</li>
                 <li>Committed to helping organizations strengthen their security posture</li>
                 <li>Driven by curiosity and continuous learning</li>
               </ul>
               {/* Skills & Certifications */}
-              <div className="mb-10 mt-8">
-                <h3 className="text-xl font-bold text-slate-200 mb-4 tracking-wide opacity-90">Certifications</h3>
-                <div className="flex flex-wrap gap-3 justify-end">
+              <div className="mb-10 mt-10">
+                <h3 className="text-xl md:text-2xl font-extralight leading-tight tracking-tight text-slate-200 text-decoration-animate mb-4 text-left">Certifications</h3>
+                <div className="flex flex-wrap gap-3 justify-start">
                   <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-600 text-slate-200 text-sm font-medium shadow-sm">CRTP</span>
                   <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-600 text-slate-200 text-sm font-medium shadow-sm">CEH v11</span>
                   <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-600 text-slate-200 text-sm font-medium shadow-sm">PortSwigger Academy <span className="text-xs text-sky-400 ml-1">(In Progress)</span></span>
@@ -191,50 +191,67 @@ const AboutSection = () => {
               </div>
               {/* Experience */}
               <div className="mb-10">
-                <h3 className="text-xl font-bold text-slate-200 mb-4 tracking-wide opacity-90">Experience</h3>
+                <h3 className="text-xl md:text-2xl font-extralight leading-tight tracking-tight text-slate-200 text-decoration-animate mb-4 text-left">Experience</h3>
                 <ul className="list-disc pl-6 text-lg text-slate-300 space-y-2 text-left">
-                  <li>Security Analyst VAPT - Team Lead at HackIT Advisory and Services</li>
-                  <li>VAPT Analyst at Skillmine Technologies</li>
+                  <li>Security Analyst VAPT - Team Lead at HackIT Advisory and Services (2023 - Present)</li>
+                  <li>VAPT Analyst at Skillmine Technologies (2022 - 2023)</li>
                 </ul>
               </div>
               {/* Social Links */}
-              <div className="flex gap-6 justify-end mt-8">
+              <div className="flex gap-6 justify-start mt-8">
                 {/* GitHub */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+                <a href="https://github.com/a11en007" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
                   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-slate-300 hover:text-sky-400 transition-colors">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.34-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.847-2.338 4.695-4.566 4.944.36.31.68.92.68 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.577.688.48C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z" />
                   </svg>
                 </a>
-                {/* Website */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+                {/* LinkedIn */}
+                <a href="https://linkedin.com/in/allen-james-aa755a244" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
                   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-slate-300 hover:text-sky-400 transition-colors">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-                    <path stroke="currentColor" strokeWidth="2" d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
+                    <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    <path d="M7 10v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <circle cx="7" cy="7" r="1.5" fill="currentColor"/>
+                    <path d="M11 16v-3a2 2 0 1 1 4 0v3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M11 13h0" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                 </a>
-                {/* Medium */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+                {/* Resume Download */}
+                <a href="/resume.pdf" download className="transition-transform hover:scale-110">
                   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-slate-300 hover:text-sky-400 transition-colors">
-                    <circle cx="6" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
-                    <ellipse cx="16.5" cy="12" rx="4.5" ry="7" stroke="currentColor" strokeWidth="2" />
+                    <path d="M12 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <rect x="4" y="20" width="16" height="2" rx="1" fill="currentColor"/>
                   </svg>
                 </a>
               </div>
             </div>
           </div>
           {/* Music Side */}
-          <div className="about-section-col flex flex-col justify-center items-start text-left px-2 md:px-8 mt-12 md:mt-0">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 mb-6 tracking-wide about-word-animate" data-delay="200">Music</h2>
-            <div className="max-w-md">
-              <p className="text-lg text-slate-300 leading-relaxed mb-4 about-word-animate" data-delay="400">
-                [Your music portfolio goes here. Add your bio, genres, notable works, and links to your music.]
-              </p>
-              <p className="text-lg text-slate-300 leading-relaxed mb-4 about-word-animate" data-delay="600">
-                Example: Electronic music producer blending cyberpunk and chillwave influences. Released tracks on major platforms and collaborated with international artists.
-              </p>
-              <p className="text-lg text-slate-300 leading-relaxed mb-4 about-word-animate" data-delay="800">
-                <a href="#" className="underline text-slate-200 hover:text-slate-50 transition-colors">Listen on SoundCloud</a>
-              </p>
+          <div className="about-section-col flex flex-col justify-start items-center px-2 md:px-8 h-full">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extralight leading-tight tracking-tight text-slate-50 text-decoration-animate mb-16 text-center about-word-animate whitespace-nowrap" data-delay="0">Music Producer</h1>
+            <div className="max-w-md w-full">
+              <div className="w-16 h-0.5 bg-slate-600 mb-8 opacity-60 mx-0" />
+              <ul className="list-disc pl-6 mb-8 text-lg text-slate-300 space-y-3 about-word-animate max-w-lg text-left" data-delay="400">
+                <li>Passionate about blending rap and production with raw, emotional soundscapes.</li>
+                <li>Produce and arrange tracks across hip-hop, trap, and experimental genres.</li>
+                <li>Write and perform original verses, focusing on storytelling and energy.</li>
+                <li>Collaborate with artists and vocalists for unique, cross-genre projects.</li>
+                <li>Driven by authenticity, late-night creativity, and a love for music technology.</li>
+              </ul>
+              <div className="mb-10 mt-10">
+                <h3 className="text-xl md:text-2xl font-extralight leading-tight tracking-tight text-slate-200 text-decoration-animate mb-4 text-left">Work</h3>
+                <ul className="list-disc pl-6 text-lg text-slate-300 space-y-2 text-left">
+                  <li>
+                    EP1 PADAM
+                    <ul className="list-disc pl-6 text-base text-slate-400 space-y-1 mt-2">
+                      <li>Paadam</li>
+                      <li>Appan</li>
+                      <li>Hopelessful</li>
+                      <li>Porutho</li>
+                      <li>Novv</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

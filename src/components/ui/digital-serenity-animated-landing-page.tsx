@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from './button';
 
 const DigitalSerenity = () => {
   const [mouseGradientStyle, setMouseGradientStyle] = useState({
@@ -17,7 +19,7 @@ const DigitalSerenity = () => {
       wordElements.forEach(word => {
         const delay = parseInt(word.getAttribute('data-delay')) || 0;
         setTimeout(() => {
-          if (word) word.style.animation = 'word-appear 0.8s ease-out forwards';
+          if (word) (word as HTMLElement).style.animation = 'word-appear 0.8s ease-out forwards';
         }, delay);
       });
     };
@@ -56,8 +58,8 @@ const DigitalSerenity = () => {
   
   useEffect(() => {
     const wordElements = document.querySelectorAll('.word-animate');
-    const handleMouseEnter = (e) => { if (e.target) e.target.style.textShadow = '0 0 20px rgba(203, 213, 225, 0.5)'; };
-    const handleMouseLeave = (e) => { if (e.target) e.target.style.textShadow = 'none'; };
+    const handleMouseEnter = (e) => { if (e.target) (e.target as HTMLElement).style.textShadow = '0 0 20px rgba(203, 213, 225, 0.5)'; };
+    const handleMouseLeave = (e) => { if (e.target) (e.target as HTMLElement).style.textShadow = 'none'; };
     wordElements.forEach(word => {
       word.addEventListener('mouseenter', handleMouseEnter);
       word.addEventListener('mouseleave', handleMouseLeave);
@@ -81,10 +83,10 @@ const DigitalSerenity = () => {
         floatingElementsRef.current.forEach((el, index) => {
           setTimeout(() => {
             if (el) {
-              el.style.animationPlayState = 'running';
-              el.style.opacity = ''; 
+              (el as HTMLElement).style.animationPlayState = 'running';
+              (el as HTMLElement).style.opacity = ''; 
             }
-          }, (parseFloat(el.style.animationDelay || "0") * 1000) + index * 100);
+          }, (parseFloat((el as HTMLElement).style.animationDelay || "0") * 1000) + index * 100);
         });
       }
     };
@@ -198,6 +200,13 @@ const DigitalSerenity = () => {
 
           <div className="text-center">
             <div className="mb-4 w-12 sm:w-16 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent opacity-30 mx-auto"></div>
+            <div className="mb-4">
+              <Link to="/book">
+                <Button variant="outline" className="text-slate-300 border-slate-400/50 hover:bg-slate-800 hover:text-white transition-all duration-300 animate-fade-in">
+                  Book an Appointment
+                </Button>
+              </Link>
+            </div>
             <h2 className="text-xs sm:text-sm font-mono font-light text-slate-300 uppercase tracking-[0.2em] opacity-80">
               <span className="word-animate" data-delay="3000">Scroll</span>
               <span className="word-animate" data-delay="3200">down</span>
